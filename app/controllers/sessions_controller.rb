@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
   		redirect_to games_path
   	else
   		flash[:message] = "Username or Password Error"
+      redirect_to root_path
   	end
 
   end
