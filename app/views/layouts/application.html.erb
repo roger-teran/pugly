@@ -8,12 +8,13 @@
 </head>
 <body>
 
-<a href="/pages/about">About</a>
-<a href="/pages/contact">Contact</a>
+<%= render 'layouts/header' %>
 
+<div class="main">
 <%= yield %>
 
-<p>A Latino Production | Copyright 2015</p>
+<%= render 'layouts/footer' %>
+</div>
 
 </body>
 </html>
