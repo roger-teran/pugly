@@ -24,7 +24,7 @@ body {
 
 
  */
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700|Raleway:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Raleway:400,600,700);
 /* line 378, /Users/rogmac/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/materialize-sass-0.97.0/app/assets/stylesheets/materialize/components/_color.scss */
 .materialize-red.lighten-5 {
   background-color: #fdeaeb !important;
