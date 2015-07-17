@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   get 'pages/about'
   get 'pages/contact'
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'logout', to: 'sessions#destroy', as: 'signout'
 
   resource :session, only: [:new, :create, :destroy]
 
