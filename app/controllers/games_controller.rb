@@ -69,7 +69,7 @@ class GamesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_game
       @game = Game.find(params[:id])
-      #@organizer = @game.creator --> use @organizer in the show.html.erb to render the organizer of the game
+      # --> use @organizer in the show.html.erb to render the organizer of the game
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
