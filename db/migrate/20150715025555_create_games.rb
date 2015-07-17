@@ -8,6 +8,7 @@ class CreateGames < ActiveRecord::Migration
       t.string :location
       t.string :dynamic
       t.decimal :price
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end
