@@ -5,18 +5,24 @@ class ApplicationController < ActionController::Base
 
 
 helper_method :current_user
+helper_method :current_game
 
-  	private 
+    def current_game
+      @current_game ||= Game.find(params[:id])
+    end
 
-  	def login!(user)
-  		session[:current_user_id] = user.id
-  	end
+    private 
 
-  	def logout!
-  		session[:current_user_id] = nil
-  	end
+    def login!(user)
+      session[:current_user_id] = user.id
+    end
 
-  	def current_user
-  		@current_user ||= User.find_by(id: session[:current_user_id])
-  	end
+    def logout!
+      session[:current_user_id] = nil
+    end
+
+    def current_user
+      @current_user ||= User.find_by(id: session[:current_user_id])
+    end
+
 end

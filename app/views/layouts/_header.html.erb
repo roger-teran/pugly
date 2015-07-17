@@ -1,7 +1,7 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Profile</a></li>
-  <li><a href="#!"><% if current_user %><%= button_to "Log out", session_path, method: :delete %> <% else %>
+  <li><a href="#">Profile</a></li>
+  <li><a href="#"><% if current_user %><%= button_to "Log out", session_path, method: :delete %> <% else %>
           substitute<% end %></a></li>
   <li class="divider"></li>
 </ul>
