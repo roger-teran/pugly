@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715025555) do
+ActiveRecord::Schema.define(version: 20150717153953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "enrollments", force: :cascade do |t|
+    t.string   "team"
+    t.integer  "game_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "enrollments", ["game_id"], name: "index_enrollments_on_game_id", using: :btree
+  add_index "enrollments", ["user_id"], name: "index_enrollments_on_user_id", using: :btree
 
   create_table "games", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +37,20 @@ ActiveRecord::Schema.define(version: 20150715025555) do
     t.decimal  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "creator_id"
   end
 
+  add_index "games", ["creator_id"], name: "index_games_on_creator_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.integer  "zipcode"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_foreign_key "enrollments", "games"
+  add_foreign_key "enrollments", "users"
 end
