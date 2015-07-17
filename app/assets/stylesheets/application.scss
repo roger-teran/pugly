@@ -26,14 +26,20 @@ body {
 	font-family: 'Lato', Helvetica, sans-serif;
 }
 
-body > h1 {
-	font-family: 'Raleway', Helvetica, sans-serif;
-	padding-left: 1%
+h2 {
+	font-family: 'Lato', Helvetica, sans-serif;
+	padding-left: 1%;
+	margin-top: 5%;
+	top: 1%;
 }
 
 body > .main {
 	font-family: 'Raleway', Helvetica, sans-serif;
-	padding-left: 1%
+}
+
+header {
+	margin-left: 1%;
+	top: 5vh;
 }
 
 .nav-wrapper {
@@ -57,3 +63,17 @@ body > .main {
 footer.page-footer {
   background-color: #F79F66;
 }
+
+.waves-effect.waves-light.btn-large {
+	position: relative;
+	text-align: center;
+	float: right;
+	margin-right: 2vw;
+	margin-bottom: 3vh;
+	top: -10px;
+
+}
+
+.new {
+	color: #FFFFFF;
+} 
