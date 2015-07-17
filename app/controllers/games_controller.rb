@@ -4,7 +4,11 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    if current_user
+      @games = Game.all
+    else 
+      redirect_to root_path
+    end
   end
 
   # GET /games/1
@@ -23,18 +27,18 @@ class GamesController < ApplicationController
 
   # POST /games
   # POST /games.json
-  def create
-    @game = Game.new(game_params)
-
-    respond_to do |format|
-      if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
-        format.json { render :show, status: :created, location: @game }
-      else
-        format.html { render :new }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
+  def create 
+      @game = Games.new(game_params)
+      # @game = Game.current_user.new(game_params)
+      respond_to do |format|
+        if @game.save
+          format.html { redirect_to @game, notice: 'Game was successfully created.' }
+          format.json { render :show, status: :created, location: @game }
+        else
+          format.html { render :new }
+          format.json { render json: @game.errors, status: :unprocessable_entity }
+        end
       end
-    end
   end
 
   # PATCH/PUT /games/1
@@ -65,6 +69,7 @@ class GamesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_game
       @game = Game.find(params[:id])
+      #@organizer = @game.creator --> use @organizer in the show.html.erb to render the organizer of the game
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
