@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 
-header {
+header .openner {
   height: 70vh;
 }
 
@@ -158,4 +158,10 @@ img.bg {
   border: 1px solid #0D7E83;
   background-color: #0D7E83;
   color: white;
+}
+
+.page-footer {
+	position: absolute;
+	top: 100%;
+	width: 100%;
 }

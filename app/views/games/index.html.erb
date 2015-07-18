@@ -1,39 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<header>
-<h1>Bienvenidos a Pugly</h1>
-<div class="waves-effect waves-light btn-large">
-<%= link_to 'Add a Game', new_game_path, class: "new" %>
+<div class="landing-page">
+  <div class="user-pic"></div>
+  <h3>Welcome, <% if current_user %>
+          <%= current_user.username %>
+          <% else %>
+          Pugster
+          <% end %></h3>
+  <p>You have 4 games happening this week.</p>
+  </div>
+
 </div>
-</header>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Sport</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
+<div class="index container">
+  <table>
+    <thead>
       <tr>
-        <td><%= game.name %></td>
-        <td><%= game.sport %></td>
-        <td><%= game.date %></td>
-        <td><%= game.time %></td>
-        <td><%= game.location %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'You sure?' } %></td>
+        <th>Name</th>
+        <th>Sport</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Location</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @games.each do |game| %>
+        <tr>
+          <td><%= game.name %></td>
+          <td><%= game.sport %></td>
+          <td><%= game.date %></td>
+          <td><%= game.time %></td>
+          <td><%= game.location %></td>
+          <td><%= link_to 'Show', game %></td>
+          <td><%= link_to 'Edit', edit_game_path(game) %></td>
+          <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'You sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
