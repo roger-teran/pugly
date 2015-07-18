@@ -1,3 +1,63 @@
 // Place all the styles related to the Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.landing-page {
+  position: relative;
+  height: 40vh;
+  background-color: #9E9E9E;
+
+  /* Set rules to fill background */
+  min-height: 40vh;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  top: 0;
+  left: 0;
+  margin-top: -3%;
+
+  z-index: -1;
+  
+  h3 {
+  	position: absolute;
+  	color: white;
+  	top: 12vh;
+  	padding-left: 25vw;
+  	font-weight: 400;
+  }
+  p {
+  	font-family: "Raleway", "Lato", sans-serif;
+  	position: absolute;
+  	color: white;
+  	top: 20vh;
+  	padding-left: 25.5vw;
+  	font-weight: 400;
+  	font-size: 18px;
+  }
+  .user-pic {
+	background-color: #F5F5F5;
+	position: absolute;
+	width: 9vw;
+	height: 16vh;
+	top: 13.5vh;
+	margin-left: 13vw;
+	border-radius: 50%;
+	}
+}
+
+.index {
+  position: relative;
+  /* Set rules to fill background */
+  min-height: 30vh;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
