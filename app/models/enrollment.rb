@@ -1,7 +1,7 @@
 class Enrollment < ActiveRecord::Base
   belongs_to :game
   belongs_to :user
-  has_many :teams
+  # has_many :teams
 
   validates :team, inclusion:{in:["team_a", "team_b"]}
 end

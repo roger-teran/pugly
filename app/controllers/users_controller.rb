@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
 	def show
 		# @user = User.includes(:played_games).find(params[:id])
+		@users = User.includes(:games).find(params[:id])
 	end
 
 	def create
