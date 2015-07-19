@@ -79,3 +79,30 @@ class GamesController < ApplicationController
       params.require(:game).permit(:name, :sport, :date, :time, :location, :dynamic, :price)
     end
 end
+
+
+
+
+# <!-- <p>
+#   <strong>Organizer:</strong>
+#   <%= @game.user.username %>
+# </p>
+#  -->
+# <p>
+#   <strong>Team A:</strong>
+#   <%= @game.user.username %>
+# </p>
+
+# <p>
+#   <strong>Team B:</strong>
+#   <%= @game.user.username %>
+# </p>
+
+
+
+
+
+
+
+
+
