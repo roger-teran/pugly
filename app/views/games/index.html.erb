@@ -27,13 +27,15 @@
 
    <!--  <tbody> -->
 
-      <% @games.each do |game| %>
+      <% @games.order('date').each do |game| %>
         <ul class="collection">
           <li class="collection-item avatar">
             <i class="material-icons circle">perm_contact_calendar</i>
             <span class="title"><%= game.name %></span>
             <p><%= game.sport %> on <%= game.date %> @ <%= game.location %><br>
-               <%= link_to 'Show', game %> | <%= link_to 'Edit', edit_game_path(game) %> | <%= link_to 'Delete', game, method: :delete, data: { confirm: 'You sure?' } %>
+               <%= link_to 'Show', game %> 
+               <!-- CAN ONLY EDIT OR DELETE FROM USER PAGE
+               <%= link_to 'Edit', edit_game_path(game) %> | <%= link_to 'Delete', game, method: :delete, data: { confirm: 'You sure?' } %> -->
             </p>
           </li>
         </ul>

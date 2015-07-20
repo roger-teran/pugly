@@ -41,6 +41,7 @@
 <%= @team_b.map(&:username).join(', ') %>
 
 <br>
+<br>
 <div class="divider"></div>
 <br>
 
@@ -53,10 +54,10 @@
 
 <p>4. Be on time</p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<!--<%= link_to 'Edit', edit_game_path(@game) %> | -->
 <%= link_to 'Back', games_path %>
 
-<% if @gamePage.players.count(:id) < 10 %>
+<% if @gamePage.players.count(:id) < 14 %>
   <% unless @game.players.include? current_user %>
   <%= button_to 'Join Game', game_enrollments_path(@game) %>
   <% end %>
