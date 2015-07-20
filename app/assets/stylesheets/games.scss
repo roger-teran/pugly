@@ -5,7 +5,7 @@
 .landing-page {
   position: relative;
   height: 40vh;
-  background-color: #9E9E9E;
+  background-color: #2ECC71;
 
   /* Set rules to fill background */
   min-height: 40vh;
@@ -21,6 +21,15 @@
   margin-top: -3%;
 
   z-index: -1;
+  .circle {
+    position: relative;
+    background-color: #F7F7F7;
+    width: 10%;
+    height: auto;
+    left: 12.5vw;
+    top: 11vh;
+    padding: 1vw;
+  }
   
   h3 {
   	position: absolute;

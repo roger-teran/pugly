@@ -42,8 +42,11 @@ header {
 }
 
 .nav-wrapper {
-	background-color: #2ECC71;
-	color: #FFFFFF;
+	background-color: #F7F7F7;
+	color: #2ECC71;
+	a {
+		color: #2ECC71;
+	}
 	font-family: 'Raleway', Helvetica, sans-serif;
 	padding-left: 1%;
 }
