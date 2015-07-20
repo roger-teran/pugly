@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<div class="container">
+<h4>
   <%= @game.name %>
-</p>
+</h4>
 
 <p>
-  <strong>Sport:</strong>
-  <%= @game.sport %>
+  <%= @game.location %>
 </p>
 
 <p>
@@ -18,11 +17,6 @@
 <p>
   <strong>Time:</strong>
   <%= @game.time %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @game.location %>
 </p>
 
 <p>
@@ -53,6 +47,11 @@
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
 
-<% unless @game.players.include? current_user %>
-  <%= button_to 'Join Game', game_enrollments_path(@game) %>
+<% if @gamePage.players.count(:id) < 14 %>
+  <% unless @game.players.include? current_user %>
+    <%= button_to 'Join Game', game_enrollments_path(@game) %>
+  <% end %>
+<%else %> 
+  <p> This game is full </p>
 <% end %>
+</div>
