@@ -65,7 +65,11 @@ header {
 footer.page-footer {
   position: relative;
   background-color: #2ECC71;
+
   margin-top: auto;
+
+  bottom: 0;
+
   .footer-copyright {
   	background-color: #2ECC71;
   }
@@ -90,5 +94,4 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
-
 

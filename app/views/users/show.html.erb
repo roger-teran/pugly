@@ -1,7 +1,19 @@
-<h1> <%= current_user.username %> </h1>
-<p>Events Created: <%= @users.games.count(:id) %></p>
-<p>Games: <%= @users.played_games.count(:user_id) %></p>
- <table>
+
+
+<div class="landing-page">
+  <img src="https://cdn4.iconfinder.com/data/icons/STROKE/education_icons/png/400/school_events.png" alt="" class="circle responsive-img">
+  <h3>Hi, <% if current_user %>
+          <%= current_user.username %>
+          <% else %>
+          Pugster
+          <% end %></h3>
+  <p>You've organized <strong><%= @users.games.count(:id) %></strong> games, <br>
+    and you've joined <strong><%= @users.played_games.count(:user_id) %></strong> games.</p>
+  </div>
+
+<div class="index container">
+
+<!--  <table>
     <thead>
       <tr>
         <th>Name</th>
@@ -29,8 +41,21 @@
     </tbody>
 
   </table>
+ -->
+      <h4>Games Created</h4> 
+       <% @users.games.order('date').each do |game| %>
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <i class="material-icons circle">perm_contact_calendar</i>
+            <span class="title"><%= game.name %></span>
+            <p><%= game.sport %> on <%= game.date %> @ <%= game.location %><br>
+               <%= link_to 'Show', game %> | <%= link_to 'Edit', edit_game_path(game) %> | <%= link_to 'Delete', game, method: :delete, data: { confirm: 'You sure?' } %>
+            </p>
+          </li>
+        </ul>
+      <% end %>
 
-   <table>
+<!--    <table>
     <thead>
       <tr>
         <th>Name</th>
@@ -57,5 +82,19 @@
       <% end %>
     </tbody>
 
-  </table>
+  </table> -->
 
+    <h4>Games Joined</h4> 
+       <% @users.played_games.order('date').each do |game| %>
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <i class="material-icons circle">perm_contact_calendar</i>
+            <span class="title"><%= game.name %></span>
+            <p><%= game.sport %> on <%= game.date %> @ <%= game.location %><br>
+               <%= link_to 'Show', game %> 
+               <!-- | <%= link_to 'Edit', edit_game_path(game) %> | <%= link_to 'Delete', game, method: :delete, data: { confirm: 'You sure?' } %> -->
+            </p>
+          </li>
+        </ul>
+      <% end %>
+</div>
