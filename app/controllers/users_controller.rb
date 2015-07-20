@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
 	def show
 		# @user = User.includes(:played_games).find(params[:id])
-		@users = User.includes(:games).find(params[:id])
+		@users = User.includes(:games, :played_games).find(params[:id])
 	end
 
 	def create
@@ -30,3 +30,8 @@ class UsersController < ApplicationController
 	end
 
 end
+
+
+
+
+# <% @users.games.where("date LIKE '%-07-%'").order('date').each do |game| %>

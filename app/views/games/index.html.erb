@@ -7,7 +7,7 @@
           <% else %>
           Pugster
           <% end %></h3>
-  <p>You have 4 games happening this week.</p>
+  <p>You have <%= @games.count(:id) %> games happening this week.</p>
   </div>
 
 </div>

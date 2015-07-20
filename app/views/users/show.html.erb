@@ -1,5 +1,6 @@
-<h1> Testing this page</h1>
-
+<h1> <%= current_user.username %> </h1>
+<p>Events Created: <%= @users.games.count(:id) %></p>
+<p>Games: <%= @users.played_games.count(:user_id) %></p>
  <table>
     <thead>
       <tr>
@@ -13,8 +14,8 @@
       </tr>
     </thead>
 
-    <tbody> <h3>July</h3> 
-      <% @users.games.where("date LIKE '%-07-%'").order('date').each do |game| %>
+    <tbody> <h3>Games Created</h3> 
+      <% @users.games.order('date').each do |game| %>
         <tr>
           <td><%= game.name %></td>
           <td><%= game.sport %></td>
@@ -42,8 +43,8 @@
       </tr>
     </thead>
 
-    <tbody> <h3>August</h3> 
-      <% @users.games.where("date LIKE '%-08-%'").order('date').each do |game| %>
+    <tbody> <h3>Games Played</h3> 
+      <% @users.played_games.order('date').each do |game| %>
         <tr>
           <td><%= game.name %></td>
           <td><%= game.sport %></td>
