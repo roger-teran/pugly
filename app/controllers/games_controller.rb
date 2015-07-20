@@ -14,6 +14,12 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @gamePage = Game.includes(:creator).find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @gamePage.to_json(include: :cretor) }
+    end
   end
 
   # GET /games/new
@@ -82,12 +88,6 @@ end
 
 
 
-
-# <!-- <p>
-#   <strong>Organizer:</strong>
-#   <%= @game.user.username %>
-# </p>
-#  -->
 # <p>
 #   <strong>Team A:</strong>
 #   <%= @game.user.username %>
