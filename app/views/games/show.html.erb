@@ -36,9 +36,17 @@
 <h5>Teams</h5>
 
 <p>Team A:</p>
-<%= @team_a.map(&:username).join(', ') %>
+<div class="row">
+  <% @team_a.map(&:username).each do | player | %>
+<div class="col s1"><%= player %></div>
+<% end %>
+</div>
 <p>Team B:</p>
-<%= @team_b.map(&:username).join(', ') %>
+<div class="row">
+  <% @team_b.map(&:username).each do | player | %>
+<div class="col s1"><%= player %></div>
+<% end %>
+</div>
 
 <br>
 <br>
@@ -59,10 +67,9 @@
 
 <% if @gamePage.players.count(:id) < 14 %>
   <% unless @game.players.include? current_user %>
-  <%= button_to 'Join Game', game_enrollments_path(@game) %>
+    <%= button_to 'Join Game', game_enrollments_path(@game) %>
   <% end %>
 <%else %> 
- <p> This game is full </p>
+  <p> This game is full </p>
 <% end %>
-
 </div>
