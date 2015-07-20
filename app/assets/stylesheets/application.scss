@@ -63,6 +63,7 @@ header {
 }
 
 footer.page-footer {
+  position: relative;
   background-color: #2ECC71;
   .footer-copyright {
   	background-color: #2ECC71;
@@ -80,4 +81,15 @@ footer.page-footer {
 
 .new {
 	color: #FFFFFF;
-} 
+}
+
+html, body {
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.main {
+	height: 0;
+}
