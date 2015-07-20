@@ -1,43 +1,34 @@
 class EnrollmentsController < ApplicationController
-	
+	# POST /games/:id/enrollments
 	def create
-		a = game.enrollments.select{|x| x.team == 'team_a'}
-		b = game.enrollments - a 
-		if(a.count > b.count)
-			@enrollment = Enrollment.new(user: current_user,
-										game: @game, 
-										team: b)
-		elsif(b.count > a.count)
-			@enrollment = Enrollment.new(user: current_user,
-										game: @game, 
-										team: a)
-		# @enroll = Enrollment.new(
-		# @enroll.user_id = current_user.id
-		# @enroll.game_id = current_game.id
-		# @enroll.team = )
+		@game = Game.includes(:players).find(params[:game_id])
+
+		if @game.players.include? current_user
+			flash[:message] = "You've already signed up for this game!"
+			redirect_to @game
+		else
+			@enrollment = @game.enrollments
+							   .new(player: current_user, team: next_team(@game))
+
+			if @enrollment.save
+				redirect_to @game
+			else
+				flash[:message] = "There was an error signing up for this game..."
+				redirect_to @game
+			end
 		end
 	end
 
 	def show
 		
 	end
-  # DOES THIS GO HERE?!?!?!?!?
 
-  def teams
-    self.enrollments
-      .partition { |x| x.team == "team_a" }
-      .map { |y| y.players }
-  end
 
-  # I DON'T FUCKING KNOW!
 	private
+	def next_team(game)
+		enrollments_a = game.enrollments.where(team: "team_a")
+		enrollments_b = game.enrollments.where(team: "team_b")
 
-	# def next_team (game)
-	# 	if game.enrollments = a
-	# 		game.enrollments = b
-	# 	else 
-	# 		game.enrollments = a
-	# 	end
-	# 	# return	a || b
-	# end
+		return enrollments_a.count <= enrollments_b.count ? "team_a" : "team_b"
+	end
 end

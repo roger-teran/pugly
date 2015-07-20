@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   root 'sessions#new'
 
-  resources :users 
-  resources :games
+  resources :users, only: [:new, :create, :show]
+  
+  resources :games do 
+    resources :enrollments, only: [:create, :delete]
+  end
+
 
   get 'pages/about'
   get 'pages/contact'
