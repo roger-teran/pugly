@@ -36,9 +36,17 @@
 <h5>Teams</h5>
 
 <p>Team A:</p>
-<%= @team_a.map(&:username).join(', ') %>
+<div class="row">
+  <% @team_a.map(&:username).each do | player | %>
+<div class="col s1"><%= player %></div>
+<% end %>
+</div>
 <p>Team B:</p>
-<%= @team_b.map(&:username).join(', ') %>
+<div class="row">
+  <% @team_b.map(&:username).each do | player | %>
+<div class="col s1"><%= player %></div>
+<% end %>
+</div>
 
 <br>
 <br>
