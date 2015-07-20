@@ -1,9 +1,9 @@
 class Enrollment < ActiveRecord::Base
   belongs_to :game
-  belongs_to :user
+  belongs_to :player, class_name: "User", foreign_key: :user_id
   # has_many :teams
-
-  validates :team, inclusion:{in:["team_a", "team_b"]}
+ 
+  validates :team, inclusion: { in: ["team_a", "team_b"] }
 end
 
 

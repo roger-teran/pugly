@@ -40,6 +40,12 @@
   <%= @game.creator.username %>
 </p>
 
+<h1>Teams</h1>
+<h3>Team A</h3>
+<%= @team_a.map(&:username).join(', ') %>
+<h3>Team B</h3>
+<%= @team_b.map(&:username).join(', ') %>
+
 
 
 
@@ -47,4 +53,6 @@
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
 
-<button> Join </button>
+<% unless @game.players.include? current_user %>
+  <%= button_to 'Join Game', game_enrollments_path(@game) %>
+<% end %>

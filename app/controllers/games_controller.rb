@@ -14,11 +14,18 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
-    @gamePage = Game.includes(:creator).find(params[:id])
+    @team_a = @game.enrollments
+                   .select { |enrollment| enrollment.team == "team_a" }
+                   .map &:player
+    @team_b = @game.enrollments
+                   .select { |enrollment| enrollment.team == "team_b" }
+                   .map &:player
+
+    @gamePage = Game.includes(:creator, :players).find(params[:id])
 
     respond_to do |format|
       format.html
-      format.json { render json: @gamePage.to_json(include: :cretor) }
+      format.json { render json: @gamePage.to_json(include: :creator) }
     end
   end
 
@@ -76,7 +83,7 @@ class GamesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
-      @game = Game.find(params[:id])
+      @game = Game.includes(:creator, :players, enrollments: :player).find(params[:id])
       # --> use @organizer in the show.html.erb to render the organizer of the game
     end
 
