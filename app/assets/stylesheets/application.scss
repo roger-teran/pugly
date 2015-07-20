@@ -44,11 +44,11 @@ header {
 .nav-wrapper {
 	background-color: #F7F7F7;
 	color: #2ECC71;
+	font-family: 'Raleway', Helvetica, sans-serif;
+	padding-left: 1%;
 	a {
 		color: #2ECC71;
 	}
-	font-family: 'Raleway', Helvetica, sans-serif;
-	padding-left: 1%;
 }
 
 .brand-logo {
@@ -64,6 +64,9 @@ header {
 
 footer.page-footer {
   background-color: #2ECC71;
+  .footer-copyright {
+  	background-color: #2ECC71;
+  }
 }
 
 .waves-effect.waves-light.btn-large {
@@ -73,7 +76,6 @@ footer.page-footer {
 	margin-right: 2vw;
 	margin-bottom: 3vh;
 	top: -10px;
-
 }
 
 .new {
