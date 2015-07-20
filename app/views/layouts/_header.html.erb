@@ -1,4 +1,17 @@
 <!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><% if current_user %>
+    <%= link_to 'Profile', user_path(current_user) %>
+    <% else %>
+    Profile
+    <% end %>
+  </li>
+  <li><a href="#"><% if current_user %><%= button_to "Log out", session_path, method: :delete %> <% else %>
+          substitute<% end %></a></li>
+  <li class="divider"></li>
+</ul>
+<div class="navbar-fixed">
+
 <nav>
   <div class="nav-wrapper">
     <a href="/games" class="brand-logo">pugly.</a>
@@ -15,18 +28,8 @@
     </ul>
   </div>
 </nav>
+</div>
 
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href='#'><% if current_user %>
-    <%= link_to 'Profile', user_path(current_user) %>
-    <% else %>
-    Profile
-    <% end %>
-  </a></li>
-  <li class="divider"></li>
-  <li><a href="#"><% if current_user %><%= button_to "Log out", session_path, method: :delete %> <% else %>
-          substitute<% end %></a></li>
-</ul>
 
 <% if flash[:message] %>
   <div class="message">

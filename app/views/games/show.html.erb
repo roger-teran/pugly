@@ -1,48 +1,57 @@
 <p id="notice"><%= notice %></p>
 
+<br>
 <div class="container">
-<h4>
+<h5>
   <%= @game.name %>
-</h4>
+</h5>
 
-<p>
+<p><i class="small material-icons">location_on</i>
   <%= @game.location %>
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @game.date %>
+  <i class="small material-icons">alarm_on</i>
+  <strong>Game is on</strong>
+  <%= @game.date %> at <%= @game.time %>
 </p>
 
 <p>
-  <strong>Time:</strong>
-  <%= @game.time %>
-</p>
-
-<p>
-  <strong>Dynamic:</strong>
-  <%= @game.dynamic %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @game.price %>
-</p>
-
-<p>
-  <strong>Organizer:</strong>
+  <i class="small material-icons">person_pin</i>
+  <strong>Organized by</strong>
   <%= @game.creator.username %>
 </p>
 
-<h1>Teams</h1>
-<h3>Team A</h3>
+<% if @game.price %>
+<p>
+  <i class="small material-icons">payment</i>
+  Don't forget to pay $<%= @game.price %>. Thanks!
+</p>
+<% end %>
+
+<br>
+<div class="divider"></div>
+<br>
+
+<h5>Teams</h5>
+
+<p>Team A:</p>
 <%= @team_a.map(&:username).join(', ') %>
-<h3>Team B</h3>
+<p>Team B:</p>
 <%= @team_b.map(&:username).join(', ') %>
 
+<br>
+<div class="divider"></div>
+<br>
 
+<h5>Rules</h5>
+<p>1. No refunds or credits will be offered. Please be 100% sure that you can attend before you RSVP.</p>
 
+<p>2. Please have a fun, positive, and supportive attitude. Pass the ball to your teammates and have a good time. NO rough playing, slide tackling, or screaming at others will be tolerated. You'll be removed from the game immediately.</p>
 
+<p>3. No cleats are allowed. Let's do our part to preserve the field. Turf or running shoes are recommended.</p>
+
+<p>4. Be on time</p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
