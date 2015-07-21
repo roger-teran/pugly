@@ -4,6 +4,10 @@ class Enrollment < ActiveRecord::Base
   # has_many :teams
  
   validates :team, inclusion: { in: ["team_a", "team_b"] }
+
+  # def attachable_type=(class_name)
+  #    super(class_name.constantize.base_class.to_s)
+  # end
 end
 
 
