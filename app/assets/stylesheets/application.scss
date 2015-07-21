@@ -20,6 +20,10 @@
 * {
 	font-family: 'Lato', Helvetica, sans-serif;
 }
+html {
+	position: relative;
+	min-height: 100%;
+}
 
 body {
 	background-color: #FFFFFF;
@@ -63,7 +67,7 @@ header {
 }
 
 footer.page-footer {
-  position: relative;
+  position: absolute;
   background-color: #2ECC71;
 
   margin-top: auto;
@@ -78,10 +82,10 @@ footer.page-footer {
 .waves-effect.waves-light.btn-large {
 	position: relative;
 	text-align: center;
-	float: right;
 	margin-right: 2vw;
 	margin-bottom: 3vh;
 	top: -10px;
+	background-color: #2ECC71;
 }
 
 .new {
@@ -93,5 +97,17 @@ html, body {
 	min-height: auto;
 	margin: 0;
 	padding: 0;
+}
+
+#notice {
+	margin: 0 auto;
+	text-align: center;
+	color: #2ECC71;
+}
+
+.logo {
+	width: 3.7vw;
+	height: auto;
+	margin-top: 1vh;
 }
 
