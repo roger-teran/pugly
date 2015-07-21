@@ -38,17 +38,22 @@
 <p>Team A:</p>
 <div class="row">
   <% @team_a.map(&:username).each do | player | %>
-<div class="col s1"><%= player %></div>
+<div class="col s2">
+  <%= image_tag "green-shirt.png", :class => "jerseys" %>
+  <%= player %>
+</div>
 <% end %>
 </div>
 <p>Team B:</p>
 <div class="row">
   <% @team_b.map(&:username).each do | player | %>
-<div class="col s1"><%= player %></div>
+<div class="col s2">
+  <%= image_tag "black-shirt.png", :class => "jerseys" %>
+  <%= player %>
+</div>
 <% end %>
 </div>
 
-<br>
 <br>
 <div class="divider"></div>
 <br>
@@ -65,11 +70,11 @@
 <!--<%= link_to 'Edit', edit_game_path(@game) %> | -->
 <%= link_to 'Back', games_path %>
 
-<% if @gamePage.players.count(:id) < 14 %>
+<% if @gamePage.players.count(:id) < 12 %>
   <% unless @game.players.include? current_user %>
     <%= button_to 'Join Game', game_enrollments_path(@game) %>
   <% end %>
 <%else %> 
-  <p> This game is full </p>
+  <p>This game is full now!</p>
 <% end %>
 </div>
