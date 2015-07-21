@@ -42,6 +42,7 @@
 
   </table>
  -->
+      <br>
       <h4>Games Created</h4> 
        <% @users.games.order('date').each do |game| %>
         <ul class="collection">
@@ -83,7 +84,7 @@
     </tbody>
 
   </table> -->
-
+    <br>
     <h4>Games Joined</h4> 
        <% @users.played_games.order('date').each do |game| %>
         <ul class="collection">

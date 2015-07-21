@@ -66,13 +66,14 @@
 <p>3. No cleats are allowed. Let's do our part to preserve the field. Turf or running shoes are recommended.</p>
 
 <p>4. Be on time</p>
+<br>
 
 <!--<%= link_to 'Edit', edit_game_path(@game) %> | -->
-<%= link_to 'Back', games_path %>
+<!--<%= link_to 'Back', games_path %> -->
 
 <% if @gamePage.players.count(:id) < 12 %>
   <% unless @game.players.include? current_user %>
-    <%= button_to 'Join Game', game_enrollments_path(@game) %>
+    <%= button_to 'Join Game', game_enrollments_path(@game), class: "btn waves-effect waves-light btn-large" %>
   <% end %>
 <%else %> 
   <p>This game is full now!</p>
