@@ -6,11 +6,11 @@
     Profile
     <% end %>
   </li>
-  <li><a href="#"><% if current_user %><%= button_to "Log out", session_path, method: :delete %> <% else %>
+  <li><a href="#"><% if current_user %><%= button_to "Log out", session_path, method: :delete, class: "logout" %> <% else %>
           substitute<% end %></a></li>
   <li class="divider"></li>
 </ul>
-<div class="navbar-fixed">
+<div class="navbar">
 
 <nav>
   <div class="nav-wrapper">

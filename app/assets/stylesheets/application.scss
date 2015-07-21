@@ -53,6 +53,17 @@ header {
 	a {
 		color: #2ECC71;
 	}
+	#dropdown1 {
+				a {
+		color: #2ECC71;
+		font-family: 'lato', Helvetica, sans-serif;
+		font-size: 16px;
+		}
+		.logout {
+			border: 0 none #EEEEEE;
+			background-color: transparent;
+		}
+	}
 }
 
 .brand-logo {
@@ -110,4 +121,6 @@ html, body {
 	height: auto;
 	margin-top: 1vh;
 }
+
+
 
