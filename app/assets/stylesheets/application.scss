@@ -20,6 +20,10 @@
 * {
 	font-family: 'Lato', Helvetica, sans-serif;
 }
+html {
+	position: relative;
+	min-height: 100%;
+}
 
 body {
 	background-color: #FFFFFF;
@@ -63,7 +67,7 @@ header {
 }
 
 footer.page-footer {
-  position: relative;
+  position: absolute;
   background-color: #2ECC71;
 
   margin-top: auto;
