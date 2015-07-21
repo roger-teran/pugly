@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 
 	has_many :enrollments
-	has_many :played_games, through: :enrollments,  source: :game
+	has_many :played_games, :through => :enrollments, :source => :game
 	
 	has_many :games, foreign_key: "creator_id"
 
