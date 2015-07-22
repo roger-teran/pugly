@@ -25,11 +25,10 @@
 <% if @game.price %>
 <p>
   <i class="small material-icons">payment</i>
-  Don't forget to pay $<%= @game.price %>. Thanks!  <form action="/charge" method="POST">
+  Don't forget to pay $<%= @game.price %>.
     <!-- Stripe button-->
-
-    <form action="/charge" method="POST">
-        <script
+    Thanks!  <form action="<%=game_path%>" method="POST">
+    <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="pk_test_jt51ceLPhHopAda3c0wynTLe"
         data-image="http://cdn2.coloringcrew.com/coloring-book/coloring/soccer-player-with-ball.png"

@@ -1,4 +1,4 @@
-// enable the visual refresh
+
 google.maps.visualRefresh = true;
 
 var map;
@@ -18,7 +18,7 @@ function initialize() {
             var infowindow = new google.maps.InfoWindow({
                 map: map,
                 position: pos,
-                content: 'Location found using HTML5.'
+                content: 'You are here'
             });
 
             map.setCenter(pos);
@@ -48,3 +48,5 @@ function handleNoGeolocation(errorFlag) {
     map.setCenter(options.position);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
