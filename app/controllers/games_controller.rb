@@ -4,12 +4,29 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    if current_user
+      @games = Game.all
+    else 
+      redirect_to root_path
+    end
   end
 
   # GET /games/1
   # GET /games/1.json
   def show
+    @team_a = @game.enrollments
+                   .select { |enrollment| enrollment.team == "team_a" }
+                   .map &:player
+    @team_b = @game.enrollments
+                   .select { |enrollment| enrollment.team == "team_b" }
+                   .map &:player
+
+    @gamePage = Game.includes(:creator, :players).find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @gamePage.to_json(include: :creator) }
+    end
   end
 
   # GET /games/new
@@ -23,18 +40,18 @@ class GamesController < ApplicationController
 
   # POST /games
   # POST /games.json
-  def create
-    @game = Game.new(game_params)
-
-    respond_to do |format|
-      if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
-        format.json { render :show, status: :created, location: @game }
-      else
-        format.html { render :new }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
+  def create 
+      @game = Game.new(game_params)
+      @game.creator_id = current_user.id
+      respond_to do |format|
+        if @game.save
+          format.html { redirect_to @game, notice: 'Game was successfully created.' }
+          format.json { render :show, status: :created, location: @game }
+        else
+          format.html { render :new }
+          format.json { render json: @game.errors, status: :unprocessable_entity }
+        end
       end
-    end
   end
 
   # PATCH/PUT /games/1
@@ -61,10 +78,13 @@ class GamesController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
-      @game = Game.find(params[:id])
+      @game = Game.includes(:creator, :players, enrollments: :player).find(params[:id])
+      # --> use @organizer in the show.html.erb to render the organizer of the game
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -72,3 +92,24 @@ class GamesController < ApplicationController
       params.require(:game).permit(:name, :sport, :date, :time, :location, :dynamic, :price)
     end
 end
+
+
+
+# <p>
+#   <strong>Team A:</strong>
+#   <%= @game.user.username %>
+# </p>
+
+# <p>
+#   <strong>Team B:</strong>
+#   <%= @game.user.username %>
+# </p>
+
+
+
+
+
+
+
+
+

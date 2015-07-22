@@ -1,39 +1,81 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<br>
+<div class="container">
+<h5>
   <%= @game.name %>
-</p>
+</h5>
 
-<p>
-  <strong>Sport:</strong>
-  <%= @game.sport %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @game.date %>
-</p>
-
-<p>
-  <strong>Time:</strong>
-  <%= @game.time %>
-</p>
-
-<p>
-  <strong>Location:</strong>
+<p><i class="small material-icons">location_on</i>
   <%= @game.location %>
 </p>
 
 <p>
-  <strong>Dynamic:</strong>
-  <%= @game.dynamic %>
+  <i class="small material-icons">alarm_on</i>
+  <strong>Game is on</strong>
+  <%= @game.date %> at <%= @game.time %>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @game.price %>
+  <i class="small material-icons">person_pin</i>
+  <strong>Organized by</strong>
+  <%= @game.creator.username %>
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<% if @game.price %>
+<p>
+  <i class="small material-icons">payment</i>
+  Don't forget to pay $<%= @game.price %>. Thanks!
+</p>
+<% end %>
+
+<br>
+<div class="divider"></div>
+<br>
+
+<h5>Teams</h5>
+
+<p>Team A:</p>
+<div class="row">
+  <% @team_a.map(&:username).each do | player | %>
+<div class="col s2">
+  <%= image_tag "green-shirt.png", :class => "jerseys" %>
+  <%= player %>
+</div>
+<% end %>
+</div>
+<p>Team B:</p>
+<div class="row">
+  <% @team_b.map(&:username).each do | player | %>
+<div class="col s2">
+  <%= image_tag "black-shirt.png", :class => "jerseys" %>
+  <%= player %>
+</div>
+<% end %>
+</div>
+
+<br>
+<div class="divider"></div>
+<br>
+
+<h5>Rules</h5>
+<p>1. No refunds or credits will be offered. Please be 100% sure that you can attend before you RSVP.</p>
+
+<p>2. Please have a fun, positive, and supportive attitude. Pass the ball to your teammates and have a good time. NO rough playing, slide tackling, or screaming at others will be tolerated. You'll be removed from the game immediately.</p>
+
+<p>3. No cleats are allowed. Let's do our part to preserve the field. Turf or running shoes are recommended.</p>
+
+<p>4. Be on time</p>
+<br>
+
+<!--<%= link_to 'Edit', edit_game_path(@game) %> | -->
+<!--<%= link_to 'Back', games_path %> -->
+
+<% if @gamePage.players.count(:id) < 12 %>
+  <% unless @game.players.include? current_user %>
+    <%= button_to 'Join Game', game_enrollments_path(@game), class: "btn waves-effect waves-light btn-large" %>
+  <% end %>
+<%else %> 
+  <p>This game is full now!</p>
+<% end %>
+</div>

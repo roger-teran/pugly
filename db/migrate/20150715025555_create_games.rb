@@ -9,6 +9,7 @@ class CreateGames < ActiveRecord::Migration
       t.string :dynamic
       t.decimal :price
 
+
       t.timestamps null: false
     end
   end

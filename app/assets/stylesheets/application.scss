@@ -1,0 +1,126 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "materialize";
+/*@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Raleway:400,600,700);*/
+
+* {
+	font-family: 'Lato', Helvetica, sans-serif;
+}
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	background-color: #FFFFFF;
+	font-family: 'Lato', Helvetica, sans-serif;
+}
+
+h2 {
+	font-family: 'Lato', Helvetica, sans-serif;
+	padding-left: 1%;
+	margin-top: 5%;
+	top: 1%;
+}
+
+body > .main {
+	font-family: 'Raleway', Helvetica, sans-serif;
+}
+
+header {
+	top: 5vh;
+}
+
+.nav-wrapper {
+	background-color: #F7F7F7;
+	color: #2ECC71;
+	font-family: 'Raleway', Helvetica, sans-serif;
+	padding-left: 1%;
+	a {
+		color: #2ECC71;
+	}
+	#dropdown1 {
+				a {
+		color: #2ECC71;
+		font-family: 'lato', Helvetica, sans-serif;
+		font-size: 16px;
+		}
+		.logout {
+			border: 0 none #EEEEEE;
+			background-color: transparent;
+		}
+	}
+}
+
+.brand-logo {
+	font-family: 'Raleway', Helvetica, sans-serif;
+	font-weight: 700;
+}
+
+.waves-button-input {
+ background-color: inherit;
+ border: none;
+ font-style: normal;
+}
+
+footer.page-footer {
+  position: absolute;
+  background-color: #2ECC71;
+
+  margin-top: auto;
+
+  bottom: 0;
+
+  .footer-copyright {
+  	background-color: #2ECC71;
+  }
+}
+
+.waves-effect.waves-light.btn-large {
+	position: relative;
+	text-align: center;
+	margin-right: 2vw;
+	margin-bottom: 3vh;
+	top: -10px;
+	background-color: #2ECC71;
+}
+
+.new {
+	color: #FFFFFF;
+}
+
+html, body {
+	height: auto;
+	min-height: auto;
+	margin: 0;
+	padding: 0;
+}
+
+#notice {
+	margin: 0 auto;
+	text-align: center;
+	color: #2ECC71;
+}
+
+.logo {
+	width: 3.7vw;
+	height: auto;
+	margin-top: 1vh;
+}
+
+
+

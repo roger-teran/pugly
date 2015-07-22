@@ -3,17 +3,20 @@
 <head>
   <title>Pugly</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Raleway:400,600,700' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<a href="/pages/about">About</a>
-<a href="/pages/contact">Contact</a>
+<%= render 'layouts/header' %>
+
 
 <%= yield %>
 
-<p>A Latino Production | Copyright 2015</p>
+
+<%= render 'layouts/footer' %>
 
 </body>
 </html>
