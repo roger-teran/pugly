@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <p id="notice"><%= notice %></p>
 
 <br>
@@ -7,7 +8,7 @@
 </h5>
 
 <p><i class="small material-icons">location_on</i>
-  <%= @game.location %>
+  <span class="address"> <%= @game.location %></span>
 </p>
 
 <p>
@@ -89,7 +90,7 @@
   <% unless @game.players.include? current_user %>
     <%= button_to 'Join Game', game_enrollments_path(@game), class: "btn waves-effect waves-light btn-large" %>
   <% end %>
-<%else %> 
+<%else %>
   <p>This game is full now!</p>
 <% end %>
 </div>
