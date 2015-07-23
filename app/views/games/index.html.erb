@@ -16,7 +16,6 @@
 
 <div class="index container">
     <%= stylesheet_link_tag 'map'%>
-    <%= stylesheet_link_tag 'mapcreate'%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFncEYZl8HQG3b-r1Dh6vWSTyJh9Oxygs ">
@@ -45,8 +44,8 @@
           <li class="collection-item avatar">
             <i class="material-icons circle">perm_contact_calendar</i>
             <span class="title"><%= game.name %></span>
-            <p><%= game.sport %> on <%= game.date %> @ <%= game.location %><br>
-               <%= link_to 'Show', game %> 
+            <%= game.sport %> on <%= game.date %> @ <a href='' class="location-grabber"><%= game.location %></a><br>
+               <%= link_to 'Show', game %>
                <!-- CAN ONLY EDIT OR DELETE FROM USER PAGE
                <%= link_to 'Edit', edit_game_path(game) %> | <%= link_to 'Delete', game, method: :delete, data: { confirm: 'You sure?' } %> -->
             </p>
