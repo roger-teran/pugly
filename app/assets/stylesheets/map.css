@@ -1,0 +1,9 @@
+#map-canvas {
+    width: 55%;
+    min-height:500px;
+    margin: 0;
+    padding: 15px;
+    position: relative; right: 0; bottom: 0;
+    z-index: 1;
+    float: right;
+}
