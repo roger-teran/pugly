@@ -1,14 +1,20 @@
 #map-canvas {
     width: 55%;
-    min-height:500px;
+    min-height: 713px;
     margin: 0;
     padding: 15px;
     position: relative; right: 0; bottom: 0;
     z-index: 1;
     float: right;
 }
+ #scroll-games {
+    max-height: 713px;
+    padding: 0;
+    overflow-y: scroll;
+ }
 
-#panel {
+
+/*#panel {
     position: absolute;
     top: 5px;
     left: 50%;
@@ -17,7 +23,7 @@
     background-color: #fff;
     padding: 5px;
     border: 1px solid #999;
-}
+}*/
 
 /*#panel, .panel {*/
     /*font-family: 'Roboto','sans-serif';*/
