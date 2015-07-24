@@ -95,7 +95,6 @@ $(function(){
 
     //geocoding geolocation
     function codeAddress(address, title) {
-        //var address =
         geocoder.geocode( { 'address': address}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 map.setCenter(results[0].geometry.location);
@@ -103,12 +102,25 @@ $(function(){
                     map: map,
                     position: results[0].geometry.location,
                     title: title,
-                    icon: {
+                    icon:'/images/Green-Location.png'
 
-                    }
+                    //{
+                    //
+                    //    url: '/images/Green-Location.png',
+                    //
+                    //    size: new google.maps.Size(32,32),
+                    //
+                    //    origin: new google.maps.Point(0,0),
+                    //
+                    //    anchor: new google.maps.Point(16,32),
+                    //
+                    //    scaledSize: new google.maps.Size(32,32)
+                    //
+                    //}
 
                 });
-                marker.setMap(map)
+                marker.setMap(map);
+                return marker;
             } else {
                 alert('Geocode was not successful for the following reason: ' + status);
             }
