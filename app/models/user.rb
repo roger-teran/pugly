@@ -11,4 +11,12 @@ class User < ActiveRecord::Base
 
 	validates :password, length: { minimum: 6 }
 	validates :password_digest, presence: true
+
+	has_attached_file :avatar, styles: { 
+		small: "64x64", 
+		med: "200x200", 
+		large: "400x400" 
+	}
+
+	validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 end
