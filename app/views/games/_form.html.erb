@@ -12,8 +12,8 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="input-field w1">
+  <div class="row row1">
+    <div class="input-field col s12 w1">
       <p class="fucking-form">Event name</p>
       <%= f.text_field :name, class: "create-game" %>
     </div>
@@ -25,53 +25,53 @@
     </div> -->
 
   <div class="row row2">
-  <div class="input-field w3">
+  <div class="input-field col s3 w2">
     <div class="field input-field">
       <p class="fucking-form">Date</p>
-      <%= f.date_field :date %>
+      <%= f.text_field :date, class: "create-game" %>
     </div>
   </div>
 
-  <div class="input-field w3">
+  <div class="input-field col s3 w3">
     <div class="field input-field">
       <p class="fucking-form">Time</p>
-      <%= f.time_field :time %>
+      <%= f.text_field :time, class: "create-game" %>
     </div>
   </div>
 </div>
 
  <div class="row row3">
-    <div class="field input-field w1">
+    <div class="field input-field col s3 w1">
       <p class="fucking-form">Street address</p>
       <%= f.text_field :location, class: "create-game" %>
     </div>
 
-    <div class="field input-field w2">
+    <div class="field input-field col s3 w2">
       <p class="fucking-form">City</p>
       <%= f.text_field :city, class: "create-game"%>
     </div>
 
-    <div class="field input-field w3">
+    <div class="field input-field col s3 w3">
       <p class="fucking-form">State</p>
       <%= f.text_field :state, class: "create-game"%>
     </div>
 
-    <div class="field input-field w2">
+    <div class="field input-field col s3 w2">
       <p class="fucking-form">Zip code</p>
       <%= f.text_field :zip, class: "create-game" %>
     </div>
   </div>
 
-  <div class="row">
-    <div class="field input-field w3" >
+  <div class="row row4">
+    <div class="field input-field col s3 w2" >
       <p class="fucking-form">Type</p>
       <%= f.text_field :dynamic, class: "create-game" %>
     </div>
 
   <div class="input-field">
-    <div class="field input-field w3">
+    <div class="field input-field col s3 w3">
       <p class="fucking-form">Price</p>
-      <%= f.number_field :price, in: 0.0..20.0, class: "create-game" %>
+      <%= f.text_field :price, class: "create-game" %>
     </div>
   </div>
   </div>
