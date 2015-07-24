@@ -12,63 +12,66 @@
     </div>
   <% end %>
 
+  <div class="row">
     <div class="input-field w1">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+      <p class="fucking-form">Event name</p>
+      <%= f.text_field :name, class: "create-game" %>
     </div>
+  </div>
 
     <!-- <div class="field input-field">
       <%= f.label :sport %><br>
       <%= f.text_field :sport %>
     </div> -->
-  <div class="row">
+
+  <div class="row row2">
   <div class="input-field w3">
     <div class="field input-field">
-      <%= f.label :date %><br>
+      <p class="fucking-form">Date</p>
       <%= f.date_field :date %>
     </div>
   </div>
 
   <div class="input-field w3">
     <div class="field input-field">
-      <%= f.label :time %><br>
+      <p class="fucking-form">Time</p>
       <%= f.time_field :time %>
     </div>
   </div>
 </div>
 
- <div class="row">
+ <div class="row row3">
     <div class="field input-field w1">
-      <%= f.label :street_address %><br>
-      <%= f.text_field :location, class:"address" %>
+      <p class="fucking-form">Street address</p>
+      <%= f.text_field :location, class: "create-game" %>
     </div>
 
     <div class="field input-field w2">
-      <%= f.label :city %><br>
-      <%= f.text_field :city %>
+      <p class="fucking-form">City</p>
+      <%= f.text_field :city, class: "create-game"%>
     </div>
 
     <div class="field input-field w3">
-      <%= f.label :state %><br>
-      <%= f.text_field :state %>
+      <p class="fucking-form">State</p>
+      <%= f.text_field :state, class: "create-game"%>
     </div>
 
     <div class="field input-field w2">
-      <%= f.label :zip_code %><br>
-      <%= f.text_field :zip %>
+      <p class="fucking-form">Zip code</p>
+      <%= f.text_field :zip, class: "create-game" %>
     </div>
   </div>
 
   <div class="row">
-    <div class="field input-field">
-      <%= f.label :type %><br>
-      <%= f.text_field :dynamic %>
+    <div class="field input-field w3" >
+      <p class="fucking-form">Type</p>
+      <%= f.text_field :dynamic, class: "create-game" %>
     </div>
 
-  <div class="input-field col s4">
-    <div class="field input-field">
-      <%= f.label :price %><br>
-      <%= f.number_field :price, in: 0.0..20.0, step: 5 %>
+  <div class="input-field">
+    <div class="field input-field w3">
+      <p class="fucking-form">Price</p>
+      <%= f.number_field :price, in: 0.0..20.0, class: "create-game" %>
     </div>
   </div>
   </div>
