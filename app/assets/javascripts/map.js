@@ -62,12 +62,38 @@ $(function(){
         geocoder = new google.maps.Geocoder();
         var latlng = new google.maps.LatLng(40.71, -74.0059);
         var mapOptions = {
-            zoom: 12,
+            zoom: 13,
             center: latlng
-        }
+        };
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+
+
+
+        //user present location grabber
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = new google.maps.LatLng(position.coords.latitude,
+                    position.coords.longitude);
+
+                var infowindow = new google.maps.InfoWindow({
+                    map: map,
+                    position: pos,
+                    content: 'You are here'
+                });
+
+                map.setCenter(pos);
+            }, function() {
+                handleNoGeolocation(true);
+            });
+        } else {
+            // browser doesn't support geolocation or html5
+            handleNoGeolocation(false);
+        }
     }
 
+
+    //geocoding geolocation
     function codeAddress(address, title) {
         //var address =
         geocoder.geocode( { 'address': address}, function(results, status) {
@@ -76,7 +102,11 @@ $(function(){
                 var marker = new google.maps.Marker({
                     map: map,
                     position: results[0].geometry.location,
-                    title: title
+                    title: title,
+                    icon: {
+
+                    }
+
                 });
                 marker.setMap(map)
             } else {
@@ -92,7 +122,7 @@ $(function(){
     //    var location = document.getElementById('address').value;
     //    codeAddress(location);
     //})
-
+    //Below is the function for turning on the ability to change addresses into links
     $('.location-grabber').mouseover(function(e){
         e.preventDefault();
         var loc = $(this).text();
