@@ -33,6 +33,8 @@ gem 'aws-sdk', '< 2.0'
 #PaperClip
 gem 'paperclip', '~> 4.3'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

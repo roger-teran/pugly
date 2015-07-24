@@ -16,7 +16,8 @@ class User < ActiveRecord::Base
 		small: "64x64", 
 		med: "200x200", 
 		large: "500x500" 
-	}
-
+	}, url: "s3_domain_url",
+		path: "users/:id/avatar/:style__:basename.:extension"
+	
 	validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 end
