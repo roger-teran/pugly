@@ -89,21 +89,31 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:name, :sport, :date, :time, :location, :dynamic, :price)
+      params.require(:game).permit(:name, :sport, :date, :time, :location, :dynamic, :price, :city, :state, :zip)
     end
 end
 
 
 
-# <p>
-#   <strong>Team A:</strong>
-#   <%= @game.user.username %>
-# </p>
+# <p>Team A:</p>
+# <div class="row">
+#   <% @team_a.map(&:avatar).each do | player | %>
+# <div class="col s2">
+#   <%= image_tag player.url(:med) %>
+# </div>
+# <% end %>
 
-# <p>
-#   <strong>Team B:</strong>
-#   <%= @game.user.username %>
-# </p>
+#   <% @team_a.map(&:username).each do | player | %>
+# <div class="col s2">
+#   <%= player %>
+# </div>
+# <% end %>
+# </div>
+
+# <%= image_tag "green-shirt.png", :class => "jerseys" %>
+
+
+
 
 
 

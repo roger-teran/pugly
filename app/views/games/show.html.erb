@@ -52,18 +52,18 @@
 
 <p>Team A:</p>
 <div class="row">
-  <% @team_a.map(&:username).each do | player | %>
-<div class="col s2">
-  <%= image_tag "green-shirt.png", :class => "jerseys" %>
+  <% @team_a.map{|f| [f.username, f.avatar]}.each do | player, avatar | %>
+<div class="col s1">
+  <%= image_tag avatar.url(:med), class: "enrolled-avatar" %>
   <%= player %>
 </div>
 <% end %>
 </div>
 <p>Team B:</p>
 <div class="row">
-  <% @team_b.map(&:username).each do | player | %>
-<div class="col s2">
-  <%= image_tag "black-shirt.png", :class => "jerseys" %>
+  <% @team_b.map{|f| [f.username, f.avatar]}.each do | player, avatar | %>
+<div class="col s1">
+  <%= image_tag avatar.url(:med), class: "enrolled-avatar" %>
   <%= player %>
 </div>
 <% end %>
