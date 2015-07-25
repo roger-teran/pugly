@@ -113,6 +113,16 @@ end
 # <%= image_tag "green-shirt.png", :class => "jerseys" %>
 
 
+# <% if @games.players.count(:id) < (@games.dynamic.to_i * 2) %>
+#               <p> There are <%= (@games.dynamic.to_i * 2) - @games.players.count(:id) %> spots left </p>
+#             <%else %>
+#               <p>This game is full now!</p>
+#             <% end %><% if @games.players.count(:id) < (@games.dynamic.to_i * 2) %>
+#               <p> There are <%= (@games.dynamic.to_i * 2) - @games.players.count(:id) %> spots left </p>
+#             <%else %>
+#               <p>This game is full now!</p>
+#             <% end %>
+
 
 
 
