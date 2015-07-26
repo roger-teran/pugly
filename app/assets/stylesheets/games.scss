@@ -100,7 +100,7 @@
 
 /*-------------- New Game Form ----------------*/
 
-input[type=text].create-game, input[type=time], input[type=date], input[type=number], textarea.materialize-textarea {
+input[type=text].create-game, input[type=text].datepicker, input[type=time], input[type=date], input[type=number], input[type=select], textarea.materialize-textarea {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
@@ -142,7 +142,7 @@ input[type=text].create-game, input[type=time], input[type=date], input[type=num
 }
 
 
-input[type=text]:focus.create-game {
+input[type=text]:focus.create-game, input[type=text]:hover.datepicker {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
