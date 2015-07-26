@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     if current_user
-      @games = Game.all
+      @games = Game.includes(:creator, :players, enrollments: :player).all
     else 
       redirect_to root_path
     end
@@ -113,12 +113,9 @@ end
 # <%= image_tag "green-shirt.png", :class => "jerseys" %>
 
 
+
 # <% if @games.players.count(:id) < (@games.dynamic.to_i * 2) %>
-#               <p> There are <%= (@games.dynamic.to_i * 2) - @games.players.count(:id) %> spots left </p>
-#             <%else %>
-#               <p>This game is full now!</p>
-#             <% end %><% if @games.players.count(:id) < (@games.dynamic.to_i * 2) %>
-#               <p> There are <%= (@games.dynamic.to_i * 2) - @games.players.count(:id) %> spots left </p>
+               # <p> There are <%= (@games.dynamic.to_i * 2) - @games.players.count(:id) %> spots left </p>
 #             <%else %>
 #               <p>This game is full now!</p>
 #             <% end %>
