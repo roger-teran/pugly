@@ -10,7 +10,7 @@
 <p><i class="small material-icons">location_on</i>
   <span class="address"> <%= @game.location %></span>
 </p>
-
+<span class="address"> <%= @game.dynamic %></span>
 <p>
   <i class="small material-icons">alarm_on</i>
   <strong>Game is on</strong>
@@ -86,7 +86,8 @@
 <!--<%= link_to 'Edit', edit_game_path(@game) %> | -->
 <!--<%= link_to 'Back', games_path %> -->
 
-<% if @gamePage.players.count(:id) < 12 %>
+<% if @gamePage.players.count(:id) < (@game.dynamic.to_i * 2) %>
+  <p> There are <%= (@game.dynamic.to_i * 2) - @gamePage.players.count(:id) %> spots left </p>
   <% unless @game.players.include? current_user %>
     <%= button_to 'Join Game', game_enrollments_path(@game), class: "btn waves-effect waves-light btn-large" %>
   <% end %>

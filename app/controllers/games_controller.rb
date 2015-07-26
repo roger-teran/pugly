@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     if current_user
-      @games = Game.all
+      @games = Game.includes(:creator, :players, enrollments: :player).all
     else 
       redirect_to root_path
     end
@@ -103,14 +103,19 @@ end
 # </div>
 # <% end %>
 
-#   <% @team_a.map(&:username).each do | player | %>
-# <div class="col s2">
+# <p>Team B:</p>
+# <div class="row">
+#   <% @team_b.map{|f| [f.username, f.avatar]}.each do | player, avatar | %>
+# <div class="col s1">
+#   <% if @team_b.map(&:avatar)? %>
+#   <%= image_tag avatar.url(:med), class: "enrolled-avatar" %>
+#   <% else %>
+#   <%= image_tag "green-shirt.png", :class => "jerseys" %>
+#   <% end %>
 #   <%= player %>
 # </div>
 # <% end %>
 # </div>
-
-# <%= image_tag "green-shirt.png", :class => "jerseys" %>
 
 
 
