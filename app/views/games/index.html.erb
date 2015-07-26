@@ -2,7 +2,7 @@
 
 <div class="landing-page">
   <!-- <img src="https://cdn4.iconfinder.com/data/icons/STROKE/education_icons/png/400/school_events.png" alt="" class="circle responsive-img"> -->
-  <% if current_user.avatar %>
+  <% if current_user.avatar? %>
               <%= image_tag current_user.avatar.url(:large), class: "circle responsive-img" %>
             <% else %>
               <img src="https://cdn4.iconfinder.com/data/icons/STROKE/education_icons/png/400/school_events.png" alt="" class="circle responsive-img">
@@ -49,7 +49,7 @@
           <li class="collection-item avatar">
             <i class="material-icons circle">perm_contact_calendar</i>
             <span class="title"><%= game.name %></span>
-            <%= game.sport %> on <%= game.date %> @ <a href='' class="location-grabber"><%= game.location %></a><br>
+            <%= game.sport %> on <%= game.date %> @ <a href='' class="location-grabber"><%= game.location.to_s + ' ' + game.city.to_s + ' ' + game.state.to_s + ' ' + game.zip.to_s %></a><br>
                <%= link_to 'Show', game %>
                <!-- CAN ONLY EDIT OR DELETE FROM USER PAGE
                <%= link_to 'Edit', edit_game_path(game) %> | <%= link_to 'Delete', game, method: :delete, data: { confirm: 'You sure?' } %> -->

@@ -162,5 +162,35 @@ input[type=text]:focus.create-game, input[type=text]:hover.datepicker {
 
 
 
+/*-------------- Enrollment ----------------*/
+
+@mixin border-radius($radius: 20px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+      border-radius: $radius;
+}
+
+.enrolled-avatar {
+  width: 80px;
+  height: 80px;
+  @include border-radius(100px);
+}
+
+
+
+
+
+
+
+/*<%= image_tag "black-shirt.png", :class => "jerseys" %>*/
+
+
+
+
+
+
+
+
 
 
