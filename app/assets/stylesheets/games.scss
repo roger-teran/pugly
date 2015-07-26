@@ -28,7 +28,6 @@
     height: auto;
     left: 12.5vw;
     top: 11vh;
-    padding: 1vw;
   }
   
   h3 {
@@ -175,6 +174,25 @@ input[type=text]:focus.create-game, input[type=text]:hover.datepicker {
   width: 80px;
   height: 80px;
   @include border-radius(100px);
+}
+
+.time {
+  background-color: white !important;
+  font-size: 12px !important;
+  color: #B4B5B8 !important;
+  font-style: normal !important;
+
+}
+
+.title > a {
+  color: #B4B5B8 !important;
+  font-size: 18px !important;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+
+.title > a:hover {
+  color: #2ECC71 !important;
 }
 
 
