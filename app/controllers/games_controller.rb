@@ -103,22 +103,20 @@ end
 # </div>
 # <% end %>
 
-#   <% @team_a.map(&:username).each do | player | %>
-# <div class="col s2">
+# <p>Team B:</p>
+# <div class="row">
+#   <% @team_b.map{|f| [f.username, f.avatar]}.each do | player, avatar | %>
+# <div class="col s1">
+#   <% if @team_b.map(&:avatar)? %>
+#   <%= image_tag avatar.url(:med), class: "enrolled-avatar" %>
+#   <% else %>
+#   <%= image_tag "green-shirt.png", :class => "jerseys" %>
+#   <% end %>
 #   <%= player %>
 # </div>
 # <% end %>
 # </div>
 
-# <%= image_tag "green-shirt.png", :class => "jerseys" %>
-
-
-
-# <% if @games.players.count(:id) < (@games.dynamic.to_i * 2) %>
-               # <p> There are <%= (@games.dynamic.to_i * 2) - @games.players.count(:id) %> spots left </p>
-#             <%else %>
-#               <p>This game is full now!</p>
-#             <% end %>
 
 
 
