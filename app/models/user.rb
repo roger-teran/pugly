@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+	class User < ActiveRecord::Base
 	has_secure_password
 
 	has_many :enrollments
@@ -13,10 +13,24 @@ class User < ActiveRecord::Base
 	validates :password_digest, length: { minimum: 6 }, on: :update, allow_blank: true
 
 	has_attached_file :avatar, styles: { 
-		small: "64x64", 
+		small: "100x100", 
 		med: "200x200", 
 		large: "500x500" 
-	}
-
+	}, url: "s3_domain_url",
+		path: "users/:id/avatar/:style__:basename.:extension"
+	
 	validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 end
+
+
+
+
+
+
+
+
+
+
+
+
+

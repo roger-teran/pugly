@@ -14,14 +14,16 @@
 
 <nav>
   <div class="nav-wrapper">
-    <%= image_tag "pugly-logo.png", :class => "logo" %><a href="/games" class="brand-logo">pugly.</a>
+    <a href="/games" class="brand-logo"><%= image_tag "new_logo.png", :class => "logo" %></a>
     <ul class="right hide-on-med-and-down">
-      <li><%= link_to 'New Game', new_game_path, class: "new" %></li>
+      <li><%= link_to 'FIND A GAME', games_path %></li>
+      <li><%= link_to 'ORGANIZE A GAME', new_game_path, class: "new" %></li>
+      
 
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-button" href="" data-activates="dropdown1"> 
         <% if current_user %>
-          <%= current_user.username %>
+          Hi, <%= current_user.username %>
         <% else %>
           Guest
         <% end %> <i class="material-icons right">arrow_drop_down</i></a></li>
