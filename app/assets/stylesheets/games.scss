@@ -109,8 +109,7 @@ input[type=text].create-game, input[type=time], input[type=date], input[type=num
   position: relative;
   left: 1vw;
   padding: 0.5vw .5vw 0.5vw .5vw;
-  font-size: 0.9vw;
-  width: 100% !important;
+  font-size: 14px !important;
   height: 3vh;
   font-family: "Lato", sans-serif;
   border-radius: 2px !important;
@@ -125,19 +124,41 @@ input[type=text].create-game, input[type=time], input[type=date], input[type=num
 
 
 .w1 {
-  width: 25vw;
+  width: 25vw !important;
+  margin-right: 3vw !important;
+  min-width: 200px !important;
 }
 
 .w2 {
-  width: 10vw;
+  width: 10vw !important;
+  margin-right: 3vw !important;
+  min-width: 100px !important;
 }
 
 .w3 {
-  width: 7vw;
+  width: 3vw !important;
+  margin-right: 4vw !important;
+  min-width: 75px !important;
 }
 
 
-
+input[type=text]:focus.create-game {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  left: 1vw;
+  padding: 0.5vw .5vw 0.5vw .5vw;
+  font-size: 0.9vw;
+  height: 3vh;
+  font-family: "Lato", sans-serif;
+  border-radius: 2px !important;
+  border: 1.5px solid #2ECC71 !important;
+  background-color: white;
+  box-shadow: none !important; 
+}
 
 
 

@@ -9,13 +9,13 @@ class User < ActiveRecord::Base
 	validates :username, presence: true
 	validates :email, presence: true
 
-	validates :password, length: { minimum: 6 }
-	validates :password_digest, presence: true
+	validates :password_digest,  length: { minimum: 6 }, presence: true, on: :create
+	validates :password_digest, length: { minimum: 6 }, on: :update, allow_blank: true
 
 	has_attached_file :avatar, styles: { 
 		small: "64x64", 
 		med: "200x200", 
-		large: "400x400" 
+		large: "500x500" 
 	}
 
 	validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }

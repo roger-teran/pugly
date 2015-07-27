@@ -102,7 +102,7 @@ $(function(){
                     map: map,
                     position: results[0].geometry.location,
                     title: title,
-                    icon:'/images/Green-Location.png'
+                    icon:'images/Green-Location.png'
 
                     //{
                     //
