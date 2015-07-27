@@ -77,6 +77,7 @@ header {
  font-style: normal;
 }
 
+
 footer.page-footer {
   position: absolute;
   background-color: #2ECC71;
@@ -117,9 +118,10 @@ html, body {
 }
 
 .logo {
-	width: 3.7vw;
+	width: 10vw;
 	height: auto;
 	margin-top: 1vh;
+	min-width: 100px;
 }
 
 
