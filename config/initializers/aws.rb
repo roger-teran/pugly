@@ -1,3 +1,5 @@
 AWS.config(
-	access_key_id: 'AKIAIKPQZCPEG3DFL2EA',
-	secret_access_key: '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')
+	:bucket => ENV['S3_BUCKET_NAME'],
+	:access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+)
