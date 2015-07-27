@@ -1,0 +1,44 @@
+#map-canvas {
+    width: 50%;
+    min-height: 713px;
+    margin: 0;
+    padding: 15px;
+    position: relative; right: 0; bottom: 0;
+    z-index: 1;
+    float: right;
+}
+ #scroll-games {
+    max-height: 713px;
+    padding: 0;
+    overflow-y: scroll;
+ }
+
+
+/*#panel {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -180px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+}*/
+
+/*#panel, .panel {*/
+    /*font-family: 'Roboto','sans-serif';*/
+    /*line-height: 30px;*/
+    /*padding-left: 10px;*/
+/*}*/
+
+/*#panel select, #panel input, .panel select, .panel input {*/
+    /*font-size: 15px;*/
+/*}*/
+
+/*#panel select, .panel select {*/
+    /*width: 100%;*/
+/*}*/
+
+/*#panel i, .panel i {*/
+    /*font-size: 12px;*/
+/*}*/
