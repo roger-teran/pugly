@@ -27,7 +27,7 @@
     width: 10%;
     height: auto;
     left: 12.5vw;
-    top: 11vh;
+    top: 12.5vh;
   }
   
   h3 {
@@ -49,6 +49,7 @@
   }
 
   @media screen and (max-width: 870px) {
+    
     h3 {
       top: 10vh;
       padding-left: 30vw;
@@ -213,6 +214,13 @@ input[type=text]:focus.create-game, input[type=text]:hover.datepicker {
   color: #B4B5B8 !important;
   font-size: 14px !important;
   padding-left: 2vw !important;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+span.title {
+  color: #B4B5B8 !important;
+  font-size: 14px !important;
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }

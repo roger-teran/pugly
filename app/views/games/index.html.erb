@@ -48,7 +48,7 @@
         <ul class="collection">
           <li class="collection-item avatar">
             <i class="circle time"><%= game.time %></i>
-            <span class="title"><%= link_to game.name.upcase, game %></span><br>
+            <span class="title"><%= link_to game.name.upcase, game %> on <%= game.date %></span><br>
             <a href='' class="location-grabber"><%= game.location.to_s + ', ' + game.city.to_s + ', ' + game.state.to_s + ' ' + game.zip.to_s %></a><br>
             <span class="dynamic"><%= game.dynamic %></span>
                

@@ -169,8 +169,61 @@ img.bg {
   color: white;
 }
 
+/*---------Profile Page Collection------------*/
+
 .page-footer {
 	position: absolute;
 	top: 100%;
 	width: 100%;
+}
+
+.time {
+  background-color: white !important;
+  font-size: 12px !important;
+  color: #B4B5B8 !important;
+  top: 4px;
+  font-style: normal !important;
+
+}
+
+.title > a {
+  color: #B4B5B8 !important;
+  font-size: 14px !important;
+  padding-left: 2vw !important;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+span.title {
+  color: #B4B5B8 !important;
+  font-size: 14px !important;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.title > a:hover {
+  color: #2ECC71 !important;
+}
+
+.location-grabber {
+  color: black;
+  font-size: 13px;
+  font-weight: 600;
+  padding-left: 2vw !important;
+   -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.dynamic {
+  color: #B4B5B8;
+  font-size: 13px;
+  padding-left: 2vw !important;
+}
+
+.links.a {
+  padding-left: 2vw !important;
+}
+
+.second-icon {
+  margin-right: 20px;
 }
