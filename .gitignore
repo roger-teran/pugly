@@ -16,3 +16,5 @@
 # Ignore files which contain AWS keys
 .env
 
+# Ignore aws.rb
+aws.rb
