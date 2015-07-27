@@ -102,7 +102,7 @@ $(function(){
                     map: map,
                     position: results[0].geometry.location,
                     title: title,
-                    icon:'images/Green-Location.png'
+                    icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
 
                     //{
                     //
@@ -134,13 +134,8 @@ $(function(){
     //    var location = document.getElementById('address').value;
     //    codeAddress(location);
     //})
-<<<<<<< HEAD
     //Below is the function for turning on the ability to change addresses into links
-    $('.location-grabber').mouseover(function(e){
-=======
-
     $('.location-grabber').click(function(e){
->>>>>>> 5096b2b222af2bbd2108bfcb39fb10e4148ad12d
         e.preventDefault();
         var loc = $(this).text();
         var titleSpan = $(this).closest('.title')
