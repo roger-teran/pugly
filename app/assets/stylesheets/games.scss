@@ -47,6 +47,30 @@
   	font-weight: 400;
   	font-size: 18px;
   }
+
+  @media screen and (max-width: 870px) {
+    h3 {
+      top: 10vh;
+      padding-left: 30vw;
+      font-size: 36px;
+    }
+    p {
+        padding-left: 30vw;
+        top: 18vh;
+        font-size: 18px;
+    }
+}
+  @media screen and (max-width: 560px) {
+    h3 {
+      font-size: 28px;
+      padding-left: 40vw;
+    }
+    p {
+        font-size: 14px;
+        padding-left: 40vw;
+        top: 17vh;
+    }
+}
   .user-pic {
 	background-color: #F5F5F5;
 	position: absolute;
@@ -180,22 +204,99 @@ input[type=text]:focus.create-game, input[type=text]:hover.datepicker {
   background-color: white !important;
   font-size: 12px !important;
   color: #B4B5B8 !important;
+  top: 4px;
   font-style: normal !important;
 
 }
 
 .title > a {
   color: #B4B5B8 !important;
-  font-size: 18px !important;
-  -webkit-transition: color 0.5s ease-in-out;
-  transition: color 0.5s ease-in-out;
+  font-size: 14px !important;
+  padding-left: 2vw !important;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .title > a:hover {
   color: #2ECC71 !important;
 }
 
+.location-grabber {
+  color: black;
+  font-size: 13px;
+  font-weight: 600;
+  padding-left: 2vw !important;
+   -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
 
+.location-grabber:hover {
+  color: #2ECC71;
+}
+
+.dynamic {
+  color: #B4B5B8;
+  font-size: 13px;
+  padding-left: 2vw !important;
+}
+
+.container-index {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.new-page {
+  position: relative;
+  height: 40vh;
+  background-color: #2ECC71;
+
+  /* Set rules to fill background */
+  min-height: 20vh;
+  min-width: 1024px;
+  
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  
+  /* Set up positioning */
+  top: 0;
+  left: 0;
+  margin-top: -3%;
+
+  z-index: -1;
+
+  h5 {
+    position: relative;
+    color: white;
+    top: 18px;
+    width: 70%;
+    margin: 0 auto;
+    top: 10vh;
+  }
+
+  p {
+    font-family: "Raleway", "Lato", sans-serif;
+    position: absolute;
+    color: white;
+    top: 20vh;
+    padding-left: 25.5vw;
+    font-weight: 400;
+    font-size: 18px;
+  }
+  .user-pic {
+  background-color: #F5F5F5;
+  position: absolute;
+  width: 9vw;
+  height: 16vh;
+  top: 13.5vh;
+  margin-left: 13vw;
+  border-radius: 50%;
+  }
+}
+
+.add-game {
+  margin-left: 1.1vw;
+}
 
 
 

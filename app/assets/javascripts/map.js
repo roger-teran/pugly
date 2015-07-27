@@ -93,7 +93,7 @@ $(function(){
     //    codeAddress(location);
     //})
 
-    $('.location-grabber').mouseover(function(e){
+    $('.location-grabber').click(function(e){
         e.preventDefault();
         var loc = $(this).text();
         var titleSpan = $(this).closest('.title')
