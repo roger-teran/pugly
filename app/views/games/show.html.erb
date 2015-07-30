@@ -53,7 +53,7 @@
 <p>Team A:</p>
 <div class="row">
   <% @team_a.map{|f| [f.username, f.avatar]}.each do | player, avatar | %>
-<div class="col s1">
+<div class="col s1 teamster">
   <%= image_tag avatar.url(:med), class: "enrolled-avatar" %>
   <%= player %>
 </div>
@@ -62,7 +62,7 @@
 <p>Team B:</p>
 <div class="row">
   <% @team_b.map{|f| [f.username, f.avatar]}.each do | player, avatar | %>
-<div class="col s1">
+<div class="col s1 teamster">
   <%= image_tag avatar.url(:med), class: "enrolled-avatar" %>
   <%= player %>
 </div>
